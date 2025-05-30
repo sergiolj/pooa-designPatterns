@@ -6,14 +6,14 @@ public class Main {
         LightBulb estar = new LightBulb("Estar");
         LightBulb cozinha = new LightBulb("Cozinha");
 
-        Command estarOn = new LightOnCommand(estar);
-        Command estarOff = new LightOffCommand(estar);
+        LightCommand estarOn = new LightTurnOnCommand(estar);
+        LightCommand estarOff = new LightTurnOffCommand(estar);
 
-        Command cozinhaOn = new LightOnCommand(cozinha);
-        Command cozinhaOff = new LightOffCommand(cozinha);
+        LightCommand cozinhaOn = new LightTurnOnCommand(cozinha);
+        LightCommand cozinhaOff = new LightTurnOffCommand(cozinha);
 
         //Configurando o controle remoto
-        RemoteInvoker remote = new RemoteInvoker();
+        RemoteControlInvoker remote = new RemoteControlInvoker();
         remote.setCommand(estarOn);
         remote.executeCommand();
 

@@ -1,6 +1,6 @@
 package designPatterns.command;
 
-public interface Command {
+public interface LightCommand {
     void execute();
     void undo();
 }

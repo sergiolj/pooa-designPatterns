@@ -1,9 +1,9 @@
 package designPatterns.command;
 
-public class LightOnCommand implements Command {
+public class LightTurnOnCommand implements LightCommand {
     private final LightBulb lightBulb;
 
-    public LightOnCommand(LightBulb lightBulb) {
+    public LightTurnOnCommand(LightBulb lightBulb) {
         this.lightBulb = lightBulb;
     }
 
