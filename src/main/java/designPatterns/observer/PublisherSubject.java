@@ -1,7 +1,8 @@
 package designPatterns.observer;
 
-public interface EditoraSubject {
+public interface PublisherSubject {
     void registerObserver(SubscriberObserver subscriber);
     void removeObserver(SubscriberObserver subscriber);
     void notifyObservers();
+    String getLastPublishedMagazine();
 }
