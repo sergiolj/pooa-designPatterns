@@ -51,7 +51,7 @@ public class TempSensorConcreteSubject implements TempSensorSubject, Runnable{
 
     }
 
-    public void turnOffSystem() {
+    public void turnOff() {
         online = false;
     }
 
@@ -63,7 +63,7 @@ public class TempSensorConcreteSubject implements TempSensorSubject, Runnable{
                 if(currentTemp != temperature) {
                     notifyObservers();
                 }
-                Thread.sleep(TimeUnit.SECONDS.toMillis(10));
+                Thread.sleep(TimeUnit.SECONDS.toMillis(3));
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
