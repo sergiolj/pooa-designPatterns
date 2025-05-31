@@ -6,16 +6,12 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class TempSensorConcreteSubject implements TempSensorSubject, Runnable{
-    private List<TempSensorObserver> observers;
+    private final List<TempSensorObserver> observers;
     private int temperature = 20;//Valor arbitrado
     private volatile boolean online;
     private Random ran = new Random();
 
-    public TempSensorConcreteSubject(List<TempSensorObserver> observers) {
-        this.observers = observers;
-        this.online = true;
-        startMonitoring();
-    }
+
     public TempSensorConcreteSubject() {
         this.observers = new ArrayList<>();
         this.online = true;
@@ -24,7 +20,7 @@ public class TempSensorConcreteSubject implements TempSensorSubject, Runnable{
 
     public int updateTemperature() {
         //Implementa a leitura atual do sensor de temperatura
-        temperature = ran.nextInt(temperature-5,temperature+5);
+        temperature = ran.nextInt(temperature-2,temperature+2);
         return temperature;
     }
 
@@ -48,7 +44,9 @@ public class TempSensorConcreteSubject implements TempSensorSubject, Runnable{
 
     @Override
     public void notifyObservers() {
-
+        for (TempSensorObserver observer : observers) {
+            observer.update();
+        }
     }
 
     public void turnOff() {

@@ -1,7 +1,7 @@
 package designPatterns.observer;
 
 public class SubscriberConcreteObserver implements SubscriberObserver{
-    private String name;
+    private final String name;
     private final PublisherSubject publisher;
 
     public SubscriberConcreteObserver(String name, PublisherSubject publisher) {
