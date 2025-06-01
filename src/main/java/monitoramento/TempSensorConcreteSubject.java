@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TempSensorConcreteSubject implements TempSensorSubject, Runnable{
     private final List<TempSensorObserver> observers;
-    private int temperature = 20;//Valor arbitrado
+    private double temperature = 20;//Valor arbitrado
     private volatile boolean online;
     private Random ran = new Random();
 
@@ -18,13 +18,15 @@ public class TempSensorConcreteSubject implements TempSensorSubject, Runnable{
         startMonitoring();
     }
 
-    public int updateTemperature() {
+    public double updateTemperature() {
         //Implementa a leitura atual do sensor de temperatura
-        temperature = ran.nextInt(temperature-2,temperature+2);
-        return temperature;
+        double maxVariation = 2.5;
+        double readTemperature;
+        readTemperature= ran.nextDouble(temperature-maxVariation, temperature+maxVariation);
+        return readTemperature;
     }
 
-    public int getTemperature() {
+    public double getTemperature() {
         return temperature;
     }
 
@@ -45,7 +47,7 @@ public class TempSensorConcreteSubject implements TempSensorSubject, Runnable{
     @Override
     public void notifyObservers() {
         for (TempSensorObserver observer : observers) {
-            observer.update();
+            observer.update(this.temperature);
         }
     }
 
@@ -55,13 +57,18 @@ public class TempSensorConcreteSubject implements TempSensorSubject, Runnable{
 
     @Override
     public void run() {
+        System.out.println("Initializing temperature sensor...");
+        double readTemperature;
         while(this.online){
             try {
-                int currentTemp = updateTemperature();
-                if(currentTemp != temperature) {
+                readTemperature = updateTemperature();
+                if(readTemperature != this.temperature) {
+                    this.temperature = readTemperature;
+                    System.out.printf("New temperature: [%.1f]\n", this.temperature) ;
                     notifyObservers();
+                    System.out.println();
                 }
-                Thread.sleep(TimeUnit.SECONDS.toMillis(3));
+                Thread.sleep(TimeUnit.SECONDS.toMillis(5));
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

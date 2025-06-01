@@ -1,5 +1,5 @@
 package monitoramento;
 
 public interface TempSensorObserver {
-    void update();
+    void update(double temperature);
 }

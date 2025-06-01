@@ -15,14 +15,14 @@ public class MainThreadSensorTest {
             while(timer<20){
                 Thread.sleep(TimeUnit.SECONDS.toMillis(5));
                 System.out.println("Temperatura: " + system.getTemperature());
-                timer += 5;
+                timer += 10;
             }
             system.turnOff();
         }catch(InterruptedException e){
             System.out.println("Erro ao atualizar temperatura");
         }
-        AudibleAlarm audibleAlarm = new AudibleAlarm();
-        DigitalDisplay digitalDisplay = new DigitalDisplay();
+        AudibleAlarm audibleAlarm = new AudibleAlarm("Alarme Sala");
+        DigitalDisplay digitalDisplay = new DigitalDisplay("Display Sala");
         System.out.println(Equipment.getCount());
 
 
