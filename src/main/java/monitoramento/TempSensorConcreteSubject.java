@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TempSensorConcreteSubject implements TempSensorSubject, Runnable{
     private final List<TempSensorObserver> observers;
-    private double temperature = 20;//Valor arbitrado
+    private double temperature = 30;//Valor arbitrado
     private volatile boolean online;
     private Random ran = new Random();
 
