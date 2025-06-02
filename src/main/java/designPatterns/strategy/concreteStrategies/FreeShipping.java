@@ -1,22 +1,31 @@
 package designPatterns.strategy.concreteStrategies;
 
+import designPatterns.strategy.Order;
 import designPatterns.strategy.ShipmentMethodStrategy;
-import designPatterns.strategy.exceptions.FreeShippingNotApplicableException;
 
 public class FreeShipping implements ShipmentMethodStrategy {
     private final double fixedRate = 10;
+    public final String name = "Free";
 
 
     @Override
-    public double calculateShipment(double weight, double value) {
-        if( weight <= 1 && value > fixedRate){
+    public double calculateShipment(Order order) {
+        if( order.getWeight() <= 3 && order.getPrice() > fixedRate){
             return 0;
         }else{
-            try {
-                throw new FreeShippingNotApplicableException("Purchase is not available to free shipping");
-            } catch (FreeShippingNotApplicableException e) {
-                throw new RuntimeException(e);
-            }
+            return -1;
         }
     }
+
+    @Override
+    public boolean isAvailable(Order order) {
+        return order.getWeight() <= 3 && order.getPrice() > fixedRate
+                && (order.getCod() == OrderCodes.NATIONAL || order.getCod() == OrderCodes.PICKUP);
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
 }
+
