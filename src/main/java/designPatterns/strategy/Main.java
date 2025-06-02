@@ -4,7 +4,7 @@ import designPatterns.strategy.concreteStrategies.*;
 
 public class Main {
     public static void main(String[] args) {
-        Order order = new Order(100,0.8, OrderCodes.PICKUP);
+        Order order = new Order(100,12, OrderCodes.PICKUP);
 
         ShipmentMethodStrategy free = new FreeShipping();
         ShipmentMethodStrategy standard = new StandardShipping();
@@ -24,12 +24,20 @@ public class Main {
         System.out.printf("Standard US$ %.2f\n", standard.calculateShipment(order));
 
         order.setShipmentMethodStrategy(storePickup);
-        if ((order.getShipmentMethodStrategy() instanceof StorePickup)) {
-            System.out.println("Store Pickup: Free of charge");
+        if(storePickup.isAvailable(order)){
+            System.out.println("Available for Store Pickup Method");
+        }else{
+            System.out.println("Store pickup not available for this order");
         }
 
         order.setShipmentMethodStrategy(express);
-        System.out.printf("Express US$ %.2f\n", express.calculateShipment(order));
+        if(express.isAvailable(order)){
+            System.out.println("Available for Express Method");
+            System.out.printf("Express US$ %.2f\n", express.calculateShipment(order));
+        }else{
+            System.out.println("Express shipment not available for this order");
+        }
+
         System.out.printf("Order total cost US$ %.2f with %s shipping method\n", order.calculateTotalCost(),
                 order.getShipmentMethodStrategy().getName());
     }
