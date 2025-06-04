@@ -1,13 +1,11 @@
 package designPatterns.builder;
 
+import designPatterns.builder.concreteConstructor.PepperoniBuilder;
+
 public class Main {
     public static void main(String[] args) {
-        PizzaPepperoni pepperoni = new PizzaPepperoni();
-
-        Pizza pizza1 = new Pizza(pepperoni);
-        System.out.println(pizza1);
-
-        PizzaBuilder pizzaBuilder = new PizzaBuilder();
-        System.out.println(pizzaBuilder);
+        Pizzaiolo pizzaiolo = new Pizzaiolo();
+        Pizza clientOrder = pizzaiolo.makeSpecialPizza(new PepperoniBuilder());
+        System.out.println();
     }
 }

@@ -1,12 +1,18 @@
 package designPatterns.builder;
 
-import java.util.List;
-
 public interface PizzaBuilderInterface {
-    String makeDough();
-    String makeTomatoSauce();
-    List<String> addTopping();
-    Pizza getPizza();
-    boolean withCrust();
-    boolean isGlutenFree();
+
+    PizzaBuilderInterface withDough(String dough);
+
+    PizzaBuilderInterface withSauce(String sauce);
+
+    PizzaBuilderInterface addTopping(String topping);
+
+    PizzaBuilderInterface withCrust(boolean withCrust);
+
+    PizzaBuilderInterface withGlutenFree(boolean withGlutenFree);
+
+    PizzaBuilderInterface stuffedCrustCheese(String cheese);
+
+    Pizza build();
 }

@@ -2,7 +2,6 @@ package designPatterns.builder;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Pizza {
     private final String dough;
@@ -11,12 +10,18 @@ public class Pizza {
     private final boolean stuffedCrust;
     private final boolean glutenFree;
 
-    Pizza(PizzaBuilderInterface pizzaBuilder) {
-        this.dough = pizzaBuilder.makeDough();
-        this.sauce = pizzaBuilder.makeTomatoSauce();
-        this.topping = pizzaBuilder.addTopping();
-        this.stuffedCrust = pizzaBuilder.withCrust();
-        this.glutenFree =  pizzaBuilder.isGlutenFree();
+    private Pizza(Builder builder) {
+        this.dough = builder.dough;
+        this.sauce = builder.sauce;
+        this.topping = builder.topping;
+        this.stuffedCrust = builder.stuffedCrust;
+        String stuffedCrustCheese;
+        if(stuffedCrust){
+            stuffedCrustCheese = builder.stuffedCrustCheese;
+        }else{
+            stuffedCrustCheese = null;
+        }
+        this.glutenFree = builder.glutenFree;
     }
 
     public List<String> getTopping() {
@@ -37,55 +42,56 @@ public class Pizza {
                 ", glutenFree=" + glutenFree +
                 '}';
     }
-}
 
-class PizzaBuilder implements PizzaBuilderInterface {
-    Pizza pizza;
-    Scanner sc = new Scanner(System.in);
+    public static class Builder implements PizzaBuilderInterface{
+        private String dough;
+        private String sauce;
+        private String stuffedCrustCheese;
+        private List<String> topping = new ArrayList<>();
+        private boolean stuffedCrust;
+        private boolean glutenFree;
 
-    @Override
-    public String makeDough() {
-        System.out.println("Please enter the dough type: ");
-        return this.sc.nextLine();
-    }
+        public Builder () {}
 
-    @Override
-    public String makeTomatoSauce() {
-        System.out.println("Please enter the tomato sauce type: ");
-        return sc.nextLine();
-    }
+        @Override
+        public Builder withDough(String dough) {
+            this.dough = dough;
+            return this;
+        }
+        @Override
+        public Builder withSauce(String sauce) {
+            this.sauce = sauce;
+            return this;
+        }
+        @Override
+        public Builder addTopping(String topping) {
+            this.topping.add(topping);
+            return this;
+        }
+        @Override
+        public Builder withCrust(boolean withCrust) {
+            this.stuffedCrust = withCrust;
+            return this;
+        }
+        @Override
+        public Builder withGlutenFree(boolean withGlutenFree) {
+            this.glutenFree = withGlutenFree;
+            return this;
+        }
 
-    @Override
-    public List<String> addTopping() {
-        boolean finnished = false;
-        String topping;
-        while (!finnished) {
-            System.out.println("Adding topping or (X to exit)");
-            topping = this.sc.nextLine();
-            if (topping.equalsIgnoreCase("X")){
-                finnished = true;
+        @Override
+        public Builder stuffedCrustCheese(String cheese) {
+            this.stuffedCrustCheese = cheese;
+            return this;
+        }
+
+        @Override
+        public Pizza build() {
+            if(dough == null || sauce == null || topping == null) {
+                throw new IllegalArgumentException("Dough or sauce or crust are required");
             }else{
-                this.pizza.getTopping().add(topping);
+                return new Pizza(this);
             }
         }
-        return this.pizza.getTopping();
-    }
-
-    @Override
-    public Pizza getPizza() {
-        this.sc.close();
-        return this.pizza;
-    }
-
-    @Override
-    public boolean withCrust() {
-        System.out.println("With crust? (Y/N) ");
-        String choice = sc.nextLine();
-        return choice.equalsIgnoreCase("Y");
-    }
-
-    @Override
-    public boolean isGlutenFree() {
-        return pizza.getDough().equalsIgnoreCase("Gluten-Free");
     }
 }
