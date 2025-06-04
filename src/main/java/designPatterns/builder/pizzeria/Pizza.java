@@ -1,4 +1,4 @@
-package designPatterns.builder;
+package designPatterns.builder.pizzeria;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,21 +6,17 @@ import java.util.List;
 public class Pizza {
     private final String dough;
     private final String sauce;
+    private String stuffedCrustCheese;
     private List<String> topping = new ArrayList<>();
-    private final boolean stuffedCrust;
+    private final boolean hasStuffedCrust;
     private final boolean glutenFree;
 
     private Pizza(Builder builder) {
         this.dough = builder.dough;
         this.sauce = builder.sauce;
         this.topping = builder.topping;
-        this.stuffedCrust = builder.stuffedCrust;
-        String stuffedCrustCheese;
-        if(stuffedCrust){
-            stuffedCrustCheese = builder.stuffedCrustCheese;
-        }else{
-            stuffedCrustCheese = null;
-        }
+        this.hasStuffedCrust = builder.hasStuffedCrust;
+        this.stuffedCrustCheese = builder.stuffedCrustCheese;
         this.glutenFree = builder.glutenFree;
     }
 
@@ -38,17 +34,17 @@ public class Pizza {
                 "dough='" + dough + '\'' +
                 ", sauce='" + sauce + '\'' +
                 ", topping=" + topping +
-                ", stuffedCrust=" + stuffedCrust +
+                ", stuffedCrust=" + hasStuffedCrust +
                 ", glutenFree=" + glutenFree +
                 '}';
     }
 
-    public static class Builder implements PizzaBuilderInterface{
+    public static class Builder implements GenericBuilder {
         private String dough;
         private String sauce;
         private String stuffedCrustCheese;
         private List<String> topping = new ArrayList<>();
-        private boolean stuffedCrust;
+        private boolean hasStuffedCrust;
         private boolean glutenFree;
 
         public Builder () {}
@@ -70,7 +66,7 @@ public class Pizza {
         }
         @Override
         public Builder withCrust(boolean withCrust) {
-            this.stuffedCrust = withCrust;
+            this.hasStuffedCrust = withCrust;
             return this;
         }
         @Override

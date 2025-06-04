@@ -1,0 +1,13 @@
+package designPatterns.builder.pizzeria;
+
+public class Main {
+    public static void main(String[] args) {
+        Pizzaiolo pizzaiolo = new Pizzaiolo();
+        Pizza clientOrder = pizzaiolo.makeSpecialPizza(new PepperoniBuilder());
+        Pizza clientOrder2 = pizzaiolo.makeStandardPizza(new PepperoniBuilder());
+        Pizza clientOrder3 = pizzaiolo.makeSimplePizza(new Pizza.Builder());
+        System.out.println(clientOrder);
+        System.out.println(clientOrder2);
+        System.out.println(clientOrder3);
+    }
+}
