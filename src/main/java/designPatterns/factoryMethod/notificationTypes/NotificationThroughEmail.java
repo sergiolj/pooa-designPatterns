@@ -15,4 +15,5 @@ public class NotificationThroughEmail implements NotificationProduct {
     public String getNotificationType() {
         return "E-mail";
     }
+
 }

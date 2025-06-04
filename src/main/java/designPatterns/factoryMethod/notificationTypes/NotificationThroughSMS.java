@@ -15,4 +15,5 @@ public class NotificationThroughSMS implements NotificationProduct {
     public String getNotificationType() {
         return "SMS";
     }
+
 }
