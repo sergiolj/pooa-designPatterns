@@ -1,15 +1,21 @@
 package br.ucsal.info.refactor;
 
+import br.ucsal.info.refactor.model.OperationalSystem;
+
 import java.io.File;
 
 public class SystemCheck {
     private final CommandOptions commandOpt;
-    protected int numberOfProcessors;
-    protected long freeMemoryBytes;
-    protected long totalMemoryBytes;
-    protected long maxMemoryBytes;
-    protected long totalDiskSpace;
-    protected long freeDiskSpace;
+    private int numberOfProcessors;
+    private long freeMemoryBytes;
+    private long totalMemoryBytes;
+    private long maxMemoryBytes;
+    private long totalDiskSpace;
+    private long freeDiskSpace;
+    private String displayOS;
+    private String swapUsage = "N/A";
+    private String loadAverage = "N/A";
+    private String uptimeValue = "N/A";
 
     public SystemCheck(CommandOptions commandOpt) {
         this.commandOpt = commandOpt;
@@ -32,7 +38,7 @@ public class SystemCheck {
 
     public void detectCommonOptions(){
         // Gather static info
-        String displayOS = System.getProperty("os.name") + " (" + commandOpt.getOsOption() + ")";
+        this.displayOS = System.getProperty("os.name") + " (" + commandOpt.getOsOption() + ")";
 
         // Gather dynamic info
         this.numberOfProcessors = Runtime.getRuntime().availableProcessors();
@@ -47,14 +53,53 @@ public class SystemCheck {
             totalDiskSpace = totalDiskSpace + root.getTotalSpace();
             freeDiskSpace = freeDiskSpace + root.getFreeSpace();
         }
-
-        String swapUsage = "N/A";
-        String loadAverage = "N/A";
-        String uptimeValue = "N/A";
-
     }
 
     public void detectOSSpecificOptions(OperationalSystem operationalSystem){
+        operationalSystem.info();
+    }
 
+    public CommandOptions getCommandOpt() {
+        return commandOpt;
+    }
+
+    public int getNumberOfProcessors() {
+        return numberOfProcessors;
+    }
+
+    public long getFreeMemoryBytes() {
+        return freeMemoryBytes;
+    }
+
+    public long getTotalMemoryBytes() {
+        return totalMemoryBytes;
+    }
+
+    public long getMaxMemoryBytes() {
+        return maxMemoryBytes;
+    }
+
+    public long getTotalDiskSpace() {
+        return totalDiskSpace;
+    }
+
+    public long getFreeDiskSpace() {
+        return freeDiskSpace;
+    }
+
+    public String getDisplayOS() {
+        return displayOS;
+    }
+
+    public String getSwapUsage() {
+        return swapUsage;
+    }
+
+    public String getLoadAverage() {
+        return loadAverage;
+    }
+
+    public String getUptimeValue() {
+        return uptimeValue;
     }
 }

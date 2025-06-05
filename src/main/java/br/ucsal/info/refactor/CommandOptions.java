@@ -92,4 +92,32 @@ public class CommandOptions {
     public String getOsOption() {
         return osOption;
     }
+
+    public boolean isIncludeTimestamp() {
+        return includeTimestamp;
+    }
+
+    public boolean isIncludeDisk() {
+        return includeDisk;
+    }
+
+    public boolean isIncludeMemory() {
+        return includeMemory;
+    }
+
+    public boolean isIncludeProcessors() {
+        return includeProcessors;
+    }
+
+    public boolean isFileOutputFlag() {
+        return fileOutputFlag;
+    }
+
+    public boolean isVerboseFlag() {
+        return verboseFlag;
+    }
+
+    public String getFormatOption() {
+        return formatOption;
+    }
 }

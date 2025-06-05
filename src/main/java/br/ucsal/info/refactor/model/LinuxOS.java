@@ -1,4 +1,4 @@
-package br.ucsal.info.refactor;
+package br.ucsal.info.refactor.model;
 
 import java.io.IOException;
 
