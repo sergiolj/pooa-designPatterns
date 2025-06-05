@@ -4,7 +4,7 @@
  * comportar novas implementações para outros formatos.
  * As classes JsonFormatter e TxtFormatter implementam a classe e o SystemReport usa ela como injeção de dependência.
  */
-package br.ucsal.info.refactor.factory;
+package br.ucsal.info.refactor.interfaces;
 import br.ucsal.info.refactor.util.CommandOptions;
 import java.util.function.Function;
 

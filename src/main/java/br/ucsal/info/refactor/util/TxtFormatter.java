@@ -2,7 +2,7 @@ package br.ucsal.info.refactor.util;
 
 
 import br.ucsal.info.refactor.core.SystemInfo;
-import br.ucsal.info.refactor.factory.ReportFormatter;
+import br.ucsal.info.refactor.interfaces.ReportFormatter;
 
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;

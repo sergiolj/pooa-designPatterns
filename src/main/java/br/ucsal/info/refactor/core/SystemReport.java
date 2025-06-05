@@ -3,7 +3,7 @@
  */
 package br.ucsal.info.refactor.core;
 
-import br.ucsal.info.refactor.factory.ReportFormatter;
+import br.ucsal.info.refactor.interfaces.ReportFormatter;
 import br.ucsal.info.refactor.util.CommandOptions;
 
 import java.io.FileWriter;

@@ -5,6 +5,7 @@
 package br.ucsal.info.refactor.factory;
 
 import br.ucsal.info.refactor.core.SystemInfo;
+import br.ucsal.info.refactor.interfaces.ReportFormatter;
 import br.ucsal.info.refactor.util.JsonFormatter;
 import br.ucsal.info.refactor.util.TxtFormatter;
 
