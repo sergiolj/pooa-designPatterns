@@ -1,4 +1,4 @@
-package br.ucsal.info.refactor;
+package br.ucsal.info.refactor.util;
 
 public class CommandOptions {
     private String[] args;
@@ -15,7 +15,7 @@ public class CommandOptions {
         this.args = args;
         commandSet();
         defaultOptions();
-        //validateOptions();
+        validateOptions();
     }
 
     private void validateOptions() {

@@ -1,5 +1,7 @@
 package br.ucsal.info.refactor.model;
 
+import br.ucsal.info.refactor.interfaces.OperationalSystem;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

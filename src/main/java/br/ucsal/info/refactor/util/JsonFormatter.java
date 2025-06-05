@@ -1,14 +1,17 @@
+/**
+ * Implementação concreta da interface ConcreteStrategy ReportFormatter
+ */
 package br.ucsal.info.refactor.util;
 
-import br.ucsal.info.refactor.CommandOptions;
-import br.ucsal.info.refactor.SystemInfo;
+import br.ucsal.info.refactor.core.SystemInfo;
+import br.ucsal.info.refactor.factory.ReportFormatter;
 
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.function.Function;
 
-public class JsonFormatter implements ReportFormater {
+public class JsonFormatter implements ReportFormatter {
     private final SystemInfo sysCheck;
     private final CommandOptions cmdOpt;
 
@@ -49,7 +52,7 @@ public class JsonFormatter implements ReportFormater {
             reportBuilder.append("  \"loadAverage\": \"" + sysCheck.getLoadAverage() + "\",\n");
             reportBuilder.append("  \"uptime\": \"" + sysCheck.getUptimeValue() + "\"\n");
             reportBuilder.append("}");
-        System.out.println(reportBuilder.toString());
+
         return reportBuilder;
     }
 
@@ -67,5 +70,10 @@ public class JsonFormatter implements ReportFormater {
             }
         };
         return byteFormatter;
+    }
+
+    @Override
+    public CommandOptions getCommandOptions() {
+        return this.cmdOpt;
     }
 }

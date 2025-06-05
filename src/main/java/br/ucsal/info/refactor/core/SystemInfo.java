@@ -1,6 +1,10 @@
-package br.ucsal.info.refactor;
+/**
+ * Classe contexto da interface Strategy OperationalSystem
+ */
+package br.ucsal.info.refactor.core;
 
-import br.ucsal.info.refactor.model.OperationalSystem;
+import br.ucsal.info.refactor.interfaces.OperationalSystem;
+import br.ucsal.info.refactor.util.CommandOptions;
 
 import java.io.File;
 

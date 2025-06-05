@@ -1,24 +1,30 @@
-package br.ucsal.info.refactor;
+/**
+ * A classe SystemReport é a classe Context que se utiliza dos objetos que implementam a classe ReportFormatter.
+ */
+package br.ucsal.info.refactor.core;
 
-import br.ucsal.info.refactor.util.ReportFormater;
+import br.ucsal.info.refactor.factory.ReportFormatter;
+import br.ucsal.info.refactor.util.CommandOptions;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class SystemReport {
-    private final ReportFormater reportFormater;
+    private final ReportFormatter reportFormatter;
     private final StringBuilder reportBuilder;
+    private final CommandOptions cmdOpt;
 
-    public SystemReport(ReportFormater reportFormater) {
-        this.reportFormater = reportFormater;
-        this.reportBuilder = reportFormater.formatReport();
+    public SystemReport(ReportFormatter reportFormatter) {
+        this.reportFormatter = reportFormatter;
+        this.reportBuilder = reportFormatter.formatReport();
+        this.cmdOpt = reportFormatter.getCommandOptions();
     }
 
-    public void outPutReport(CommandOptions cmdOPt) {
-        if(cmdOPt.isFileOutputFlag()){
-            String filename = "info." + cmdOPt.getFormatOption();
-            boolean verboseFlag = cmdOPt.isVerboseFlag();
-            String formatOption = cmdOPt.getFormatOption();
+    public void outPutReport() {
+        if(cmdOpt.isFileOutputFlag()){
+            String filename = "info." + cmdOpt.getFormatOption();
+            boolean verboseFlag = cmdOpt.isVerboseFlag();
+            String formatOption = cmdOpt.getFormatOption();
             saveFile(filename, verboseFlag, formatOption);
         }else{
             consoleOutput();

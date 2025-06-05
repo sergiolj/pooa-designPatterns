@@ -1,15 +1,15 @@
 package br.ucsal.info.refactor.util;
 
 
-import br.ucsal.info.refactor.CommandOptions;
-import br.ucsal.info.refactor.SystemInfo;
+import br.ucsal.info.refactor.core.SystemInfo;
+import br.ucsal.info.refactor.factory.ReportFormatter;
 
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.function.Function;
 
-public class TxtFormatter implements ReportFormater {
+public class TxtFormatter implements ReportFormatter {
     private final SystemInfo sysCheck;
     private final CommandOptions cmdOpt;
 
@@ -65,6 +65,11 @@ public class TxtFormatter implements ReportFormater {
                 }
             };
         return byteFormatter;
+    }
+
+    @Override
+    public CommandOptions getCommandOptions() {
+        return this.cmdOpt;
     }
 
 }

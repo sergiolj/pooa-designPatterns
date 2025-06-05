@@ -1,8 +1,10 @@
 package br.ucsal.info.refactor.model;
 
+import br.ucsal.info.refactor.interfaces.OperationalSystem;
+
 import java.io.IOException;
 
-public class LinuxOS implements OperationalSystem{
+public class LinuxOS implements OperationalSystem {
     private String swapUsage = "N/A";
     private String loadAverage = "N/A";
     private String uptimeValue = "N/A";
