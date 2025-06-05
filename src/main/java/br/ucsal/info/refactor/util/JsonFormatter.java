@@ -1,7 +1,7 @@
 package br.ucsal.info.refactor.util;
 
 import br.ucsal.info.refactor.CommandOptions;
-import br.ucsal.info.refactor.SystemCheck;
+import br.ucsal.info.refactor.SystemInfo;
 
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
@@ -9,10 +9,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.function.Function;
 
 public class JsonFormatter implements ReportFormater {
-    private final SystemCheck sysCheck;
+    private final SystemInfo sysCheck;
     private final CommandOptions cmdOpt;
 
-    public JsonFormatter(SystemCheck sysCheck) {
+    public JsonFormatter(SystemInfo sysCheck) {
         this.sysCheck = sysCheck;
         this.cmdOpt = sysCheck.getCommandOpt();
     }
@@ -49,6 +49,7 @@ public class JsonFormatter implements ReportFormater {
             reportBuilder.append("  \"loadAverage\": \"" + sysCheck.getLoadAverage() + "\",\n");
             reportBuilder.append("  \"uptime\": \"" + sysCheck.getUptimeValue() + "\"\n");
             reportBuilder.append("}");
+        System.out.println(reportBuilder.toString());
         return reportBuilder;
     }
 

@@ -4,8 +4,9 @@ import br.ucsal.info.refactor.model.OperationalSystem;
 
 import java.io.File;
 
-public class SystemCheck {
+public class SystemInfo {
     private final CommandOptions commandOpt;
+    private final OperationalSystem operationalSystem;
     private int numberOfProcessors;
     private long freeMemoryBytes;
     private long totalMemoryBytes;
@@ -17,10 +18,19 @@ public class SystemCheck {
     private String loadAverage = "N/A";
     private String uptimeValue = "N/A";
 
-    public SystemCheck(CommandOptions commandOpt) {
+    public SystemInfo(CommandOptions commandOpt, OperationalSystem system) {
         this.commandOpt = commandOpt;
+        this.operationalSystem = system;
+        this.swapUsage = system.getSwapUsageData();
+        this.loadAverage = system.getLoadAverageData();
+        this.uptimeValue = system.getUptimeValueData();
+        systemCheck();
+    }
+
+    public void systemCheck(){
         detectSystemOS();
         detectCommonOptions();
+        detectOSSpecificOptions(this.operationalSystem);
     }
 
     public void detectSystemOS(){
@@ -101,5 +111,23 @@ public class SystemCheck {
 
     public String getUptimeValue() {
         return uptimeValue;
+    }
+
+    @Override
+    public String toString() {
+        return "SystemInfo{" +
+                "commandOpt=" + commandOpt +
+                ", operationalSystem=" + operationalSystem +
+                ", numberOfProcessors=" + numberOfProcessors +
+                ", freeMemoryBytes=" + freeMemoryBytes +
+                ", totalMemoryBytes=" + totalMemoryBytes +
+                ", maxMemoryBytes=" + maxMemoryBytes +
+                ", totalDiskSpace=" + totalDiskSpace +
+                ", freeDiskSpace=" + freeDiskSpace +
+                ", displayOS='" + displayOS + '\'' +
+                ", swapUsage='" + swapUsage + '\'' +
+                ", loadAverage='" + loadAverage + '\'' +
+                ", uptimeValue='" + uptimeValue + '\'' +
+                '}';
     }
 }

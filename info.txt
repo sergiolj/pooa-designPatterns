@@ -1,4 +1,4 @@
-Relatório de sistema gerado em: 05/06/2025 12:42:49
+Relatório de sistema gerado em: 05/06/2025 14:07:01
 ----------------------------------------
 Sistema Operacional: Windows 10 (linux)
 Número de processadores disponíveis: 8
@@ -7,7 +7,7 @@ Memória (JVM):
   Total: 512 MB
   Máxima permitida: 7,98 GB
 Espaço em Disco (todos os volumes):
-  Livre: 56,92 GB
+  Livre: 56,94 GB
   Total: 3,49 TB
 Swap utilizado: N/A
 Carga média (1,5,15 min): N/A

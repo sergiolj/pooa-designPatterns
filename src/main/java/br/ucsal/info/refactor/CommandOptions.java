@@ -15,7 +15,7 @@ public class CommandOptions {
         this.args = args;
         commandSet();
         defaultOptions();
-        validateOptions();
+        //validateOptions();
     }
 
     private void validateOptions() {
@@ -119,5 +119,11 @@ public class CommandOptions {
 
     public String getFormatOption() {
         return formatOption;
+    }
+
+    @Override
+    public String toString() {
+        return "["+ osOption + ',' + formatOption + ',' + includeTimestamp+ ','
+                + includeDisk + ',' + includeMemory + ',' + verboseFlag + "]";
     }
 }

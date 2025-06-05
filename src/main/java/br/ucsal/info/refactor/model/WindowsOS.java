@@ -5,4 +5,19 @@ public class WindowsOS implements OperationalSystem {
     public void info() {
 
     }
+
+    @Override
+    public String getSwapUsageData() {
+        return "";
+    }
+
+    @Override
+    public String getLoadAverageData() {
+        return "";
+    }
+
+    @Override
+    public String getUptimeValueData() {
+        return "";
+    }
 }

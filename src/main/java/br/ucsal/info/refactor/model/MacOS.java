@@ -45,4 +45,19 @@ public class MacOS implements OperationalSystem {
                 // Ignoring execution errors
             }
         }
+
+    @Override
+    public String getSwapUsageData() {
+        return swapUsage;
     }
+
+    @Override
+    public String getLoadAverageData() {
+        return loadAverage;
+    }
+
+    @Override
+    public String getUptimeValueData() {
+        return uptimeValue;
+    }
+}

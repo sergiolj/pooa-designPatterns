@@ -40,4 +40,19 @@ public class LinuxOS implements OperationalSystem{
                 // Ignoring read errors
             }
         }
+
+    @Override
+    public String getSwapUsageData() {
+        return swapUsage;
     }
+
+    @Override
+    public String getLoadAverageData() {
+        return loadAverage;
+    }
+
+    @Override
+    public String getUptimeValueData() {
+        return uptimeValue;
+    }
+}
