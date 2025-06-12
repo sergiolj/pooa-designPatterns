@@ -1,5 +1,8 @@
-package Singleton;
+package designPatterns.singleton;
 
+/**
+ * Modelo proposto por Joshua Bloch no livro Java Efetivo
+ */
 public enum Singleton {
     INSTANCE;
 

@@ -1,4 +1,4 @@
-package Singleton;
+package designPatterns.singleton;
 
 public class SingletonTest {
     public static void main(String[] args) {
@@ -8,6 +8,10 @@ public class SingletonTest {
         s1.sayHello();
         s2.sayHello();
 
+        StaticBlock s3 = StaticBlock.getInstance();
+        System.out.println(s3.getMessage());
 
+        Singleton s4 = Singleton.INSTANCE;
+        s4.doSomething();
     }
 }

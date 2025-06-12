@@ -1,7 +1,5 @@
 package designPatterns.command.menuConsole;
 
-
-
 import designPatterns.command.menuConsole.commands.Command;
 
 import java.util.InputMismatchException;
