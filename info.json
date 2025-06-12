@@ -1,0 +1,17 @@
+{
+  "collectedAt": "05/06/2025 17:21:44",
+  "operatingSystem": "Linux (linux)",
+  "processors": 24,
+  "memory": {
+    "free": "491,52 MB",
+    "total": "496 MB",
+    "max": "7,64 GB"
+  },
+  "disk": {
+    "free": "170,72 GB",
+    "total": "226,23 GB"
+  },
+  "swapUsed": "N/A",
+  "loadAverage": "N/A",
+  "uptime": "N/A"
+}
