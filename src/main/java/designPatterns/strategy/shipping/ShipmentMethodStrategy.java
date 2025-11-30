@@ -1,4 +1,4 @@
-package designPatterns.strategy;
+package designPatterns.strategy.shipping;
 
 public interface ShipmentMethodStrategy {
     double calculateShipment(Order order);

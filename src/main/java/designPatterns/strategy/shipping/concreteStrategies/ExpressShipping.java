@@ -1,7 +1,7 @@
-package designPatterns.strategy.concreteStrategies;
+package designPatterns.strategy.shipping.concreteStrategies;
 
-import designPatterns.strategy.Order;
-import designPatterns.strategy.ShipmentMethodStrategy;
+import designPatterns.strategy.shipping.Order;
+import designPatterns.strategy.shipping.ShipmentMethodStrategy;
 
 public class ExpressShipping implements ShipmentMethodStrategy {
     private final double fixedRate = 1.5;

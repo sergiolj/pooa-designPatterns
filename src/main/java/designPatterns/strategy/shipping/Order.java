@@ -1,7 +1,7 @@
-package designPatterns.strategy;
+package designPatterns.strategy.shipping;
 
-import designPatterns.strategy.concreteStrategies.OrderCodes;
-import designPatterns.strategy.exceptions.ShipmentMethodNotDefined;
+import designPatterns.strategy.shipping.concreteStrategies.OrderCodes;
+import designPatterns.strategy.shipping.concreteStrategies.exceptions.ShipmentMethodNotDefined;
 
 public class Order {
     private ShipmentMethodStrategy shipmentMethodStrategy;

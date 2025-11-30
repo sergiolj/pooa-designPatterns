@@ -1,6 +1,6 @@
-package designPatterns.strategy;
+package designPatterns.strategy.shipping;
 
-import designPatterns.strategy.concreteStrategies.*;
+import designPatterns.strategy.shipping.concreteStrategies.*;
 
 public class Main {
     public static void main(String[] args) {
