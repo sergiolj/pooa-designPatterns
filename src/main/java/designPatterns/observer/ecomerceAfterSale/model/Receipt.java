@@ -3,12 +3,12 @@ package designPatterns.observer.ecomerceAfterSale.model;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Invoice {
+public class Receipt {
 
     private Map<String, Double> productList;
     private final Customer customer;
 
-    public Invoice(Customer customer) {
+    public Receipt(Customer customer) {
         productList = new HashMap<String, Double>();
         this.customer = customer;
     }

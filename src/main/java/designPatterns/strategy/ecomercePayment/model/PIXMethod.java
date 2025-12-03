@@ -1,4 +1,6 @@
-package designPatterns.strategy.payment;
+package designPatterns.strategy.ecomercePayment.model;
+
+import designPatterns.strategy.ecomercePayment.PaymentStrategy;
 
 public class PIXMethod implements PaymentStrategy {
     private double totalAmount;
@@ -7,22 +9,23 @@ public class PIXMethod implements PaymentStrategy {
     /**
      * In this method the discount is a percentage of the bill.
      */
-    private double discount = 5;
+    public static double DISCOUNT = 0.05;
 
     public PIXMethod() {}
 
     @Override
     public double getDiscount() {
-        return discount;
+        return DISCOUNT;
     }
+
 
     @Override
     public boolean setDiscount(double discount) {
         if(discount > 0 && discount <= 10){
-            this.discount = discount;
+            PIXMethod.DISCOUNT = discount;
             return true;
         }else{
-            System.out.println("Default discount applied!("+ this.discount +" %). Discount set cannot be applied.");
+            System.out.println("Default discount applied!("+ PIXMethod.DISCOUNT +" %). Discount set cannot be applied.");
             return false;
         }
     }
@@ -40,23 +43,28 @@ public class PIXMethod implements PaymentStrategy {
 
     @Override
     public double valueToPay(double bill) {
-        return bill * (1-(discount /100d));
+        return bill * (1-(DISCOUNT /100d));
     }
 
     @Override
     public boolean pay(double bill) {
-        boolean aproved = true;
-        double payment = bill * (1-(discount /100d));
+        boolean approved = true;
+        double payment = bill * (1-(DISCOUNT /100d));
         System.out.println("Generating QR Code to payment: " + payment);
         System.out.println("Waiting to payment confirmation...");
 
-        if(aproved){
+        if(approved){
             System.out.println("Payment confirmed!");
             return true;
         }else{
             return false;
         }
 
+    }
+
+    @Override
+    public boolean setPromoCode(String promoCode) {
+        return false;
     }
 
 

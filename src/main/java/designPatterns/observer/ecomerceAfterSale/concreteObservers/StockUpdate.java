@@ -1,6 +1,6 @@
 package designPatterns.observer.ecomerceAfterSale.concreteObservers;
 
-import designPatterns.observer.ecomerceAfterSale.model.Invoice;
+import designPatterns.observer.ecomerceAfterSale.model.Receipt;
 import designPatterns.observer.ecomerceAfterSale.model.Order;
 import designPatterns.observer.ecomerceAfterSale.OrderObserver;
 
@@ -11,8 +11,8 @@ public class StockUpdate implements OrderObserver {
 
     @Override
     public void update(Order order) {
-        Invoice invoice = order.getInvoice();
-        List<String> products = new ArrayList<>(invoice.getProductList().keySet());
+        Receipt receipt = order.getInvoice();
+        List<String> products = new ArrayList<>(receipt.getProductList().keySet());
         for(String product : products){
             System.out.println("Remove item " + product + " from stock Database");
         }

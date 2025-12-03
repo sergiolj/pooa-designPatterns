@@ -1,4 +1,4 @@
-package designPatterns.strategy.payment;
+package designPatterns.strategy.ecomercePayment;
 
 public class ShoppingCart {
 

@@ -1,4 +1,4 @@
-package designPatterns.strategy.payment;
+package designPatterns.strategy.ecomercePayment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,10 +12,6 @@ public class CartStrategy {
 
     public double getBill() {
         return bill;
-    }
-
-    public boolean paymentMethod (PaymentStrategy paymentStrategy) {
-        return true;
     }
 
     public void addItem(String item, double price){
@@ -33,14 +29,17 @@ public class CartStrategy {
     }
 
 
-    public void checkout(PaymentStrategy paymentStrategy) {
+    public boolean checkout(PaymentStrategy paymentStrategy) {
         if(bill == 0){
             System.out.println("Cart is empty");
+            return false;
         }else{
             if(paymentStrategy.pay(this.bill)){
                 shoppingList.clear();
                 this.bill = 0;
+                return true;
             }
         }
+        return false;
     }
 }

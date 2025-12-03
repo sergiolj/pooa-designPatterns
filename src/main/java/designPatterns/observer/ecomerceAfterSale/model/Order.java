@@ -8,11 +8,11 @@ import java.util.List;
 public class Order {
 
     private List<OrderObserver> observers;
-    private final Invoice invoice;
+    private final Receipt receipt;
 
-    public Order(Invoice invoice) {
+    public Order(Receipt receipt) {
         observers = new ArrayList<OrderObserver>();
-        this.invoice =  invoice;
+        this.receipt = receipt;
     }
 
     public void addObserver(OrderObserver observer) {
@@ -32,7 +32,7 @@ public class Order {
         notifyObservers();
     }
 
-    public Invoice getInvoice() {
-        return invoice;
+    public Receipt getInvoice() {
+        return receipt;
     }
 }
