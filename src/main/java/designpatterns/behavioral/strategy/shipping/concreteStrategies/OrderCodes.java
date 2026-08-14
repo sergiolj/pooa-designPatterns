@@ -1,0 +1,5 @@
+package designpatterns.behavioral.strategy.shipping.concreteStrategies;
+
+public enum OrderCodes {
+    PICKUP, NATIONAL,OTHER;
+}
