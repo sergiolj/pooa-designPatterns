@@ -1,4 +1,4 @@
-package designpatterns.singleton.configmanager;
+package designpatterns.creational.singleton.configmanager;
 
 //Lazy singleton
 

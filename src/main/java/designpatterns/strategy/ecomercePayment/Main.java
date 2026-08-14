@@ -2,7 +2,7 @@ package designpatterns.strategy.ecomercePayment;
 
 import java.util.Scanner;
 
-import designpatterns.factoryMethod.ecomerceUtil.PaymentMethod;
+import designpatterns.factoryMethod.ecomerceutil.PaymentMethod;
 
 public class Main {
     private static final Scanner sc = new Scanner(System.in);

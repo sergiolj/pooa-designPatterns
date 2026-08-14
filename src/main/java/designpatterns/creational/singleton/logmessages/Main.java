@@ -1,4 +1,4 @@
-package designpatterns.singleton.logmessages;
+package designpatterns.creational.singleton.logmessages;
 
 public class Main {
     public static void main(String[] args) {

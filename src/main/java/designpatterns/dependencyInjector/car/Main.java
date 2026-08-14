@@ -2,8 +2,8 @@ package designpatterns.dependencyInjector.car;
 
 import designpatterns.dependencyInjector.car.engines.EletricEngine;
 import designpatterns.dependencyInjector.car.engines.InternalCombustionEngine;
-import designpatterns.factoryMethod.notificationTypes.NotificationSignal;
-import designpatterns.factoryMethod.notificationTypes.NotificationThroughSMS;
+import designpatterns.factoryMethod.notificationtypes.NotificationSignal;
+import designpatterns.factoryMethod.notificationtypes.NotificationThroughSMS;
 
 public class Main {
     public static void main(String[] args) {

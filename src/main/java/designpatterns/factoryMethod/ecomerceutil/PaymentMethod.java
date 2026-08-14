@@ -1,4 +1,4 @@
-package designpatterns.factoryMethod.ecomerceUtil;
+package designpatterns.factoryMethod.ecomerceutil;
 
 import designpatterns.strategy.ecomercePayment.PaymentStrategy;
 import designpatterns.strategy.ecomercePayment.model.BrazilianBankSlip;

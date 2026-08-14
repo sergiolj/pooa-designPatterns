@@ -21,7 +21,8 @@ public class EmailNotificationAdapter implements NotificationService {
 		}
 		
 		if(EmailAddress.isValid(email)) {
-			logger.info("Email sent to " + email + "Subject: " + subject + " with message: " + message);
+			String emailMessage = "Email to " + email + ": " + subject + " - " + message;
+			logger.info(emailMessage);
 		}
 	}
 

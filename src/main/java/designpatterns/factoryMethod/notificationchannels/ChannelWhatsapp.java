@@ -1,6 +1,6 @@
-package designpatterns.factoryMethod.notificationChannels;
+package designpatterns.factoryMethod.notificationchannels;
 
-import designpatterns.factoryMethod.notificationTypes.NotificationThroughWhatsapp;
+import designpatterns.factoryMethod.notificationtypes.NotificationThroughWhatsapp;
 import designpatterns.factorymethod.NotificationCreator;
 import designpatterns.factorymethod.NotificationProduct;
 

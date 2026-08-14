@@ -16,7 +16,8 @@ public class SMSNotificationAdapter implements NotificationService {
 		if (phone == null || phone.isEmpty()) {
 			throw new IllegalArgumentException("Recipient cannot be null or empty");
 		}else if(PhoneNumber.isValid(phone)) {
-			logger.info("SMS sent to " + phone + " with message: " + msg);
+			String smsMessage = "SMS to " + phone + ": " + tittle + " - " + msg;
+			logger.info(smsMessage);
 		}
 	}
 

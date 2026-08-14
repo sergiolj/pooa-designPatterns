@@ -1,4 +1,4 @@
-package designpatterns.singleton.configmanager;
+package designpatterns.creational.singleton.configmanager;
 
 public class Main {
     public static void main(String[] args) {

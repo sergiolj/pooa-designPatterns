@@ -1,4 +1,4 @@
-package designpatterns.factoryMethod.notificationTypes;
+package designpatterns.factoryMethod.notificationtypes;
 
 import designpatterns.factorymethod.NotificationProduct;
 

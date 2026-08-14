@@ -1,6 +1,6 @@
-package designpatterns.factoryMethod.notificationChannels;
+package designpatterns.factoryMethod.notificationchannels;
 
-import designpatterns.factoryMethod.notificationTypes.NotificationThroughSMS;
+import designpatterns.factoryMethod.notificationtypes.NotificationThroughSMS;
 import designpatterns.factorymethod.NotificationCreator;
 import designpatterns.factorymethod.NotificationProduct;
 

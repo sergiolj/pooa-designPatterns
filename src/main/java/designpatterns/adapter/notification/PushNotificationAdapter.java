@@ -6,7 +6,7 @@ import designpatterns.adapter.notification.util.UserId;
 
 public class PushNotificationAdapter implements NotificationService {
 	private final Notification notification;
-	private final Logger logger = Logger.getLogger(PushNotificationAdapter.class.getName());
+	private final Logger logger = Logger.getLogger("PushNotificationAdapter");
 
 	public PushNotificationAdapter(Notification notification) {
 		this.notification = notification;
@@ -19,8 +19,9 @@ public class PushNotificationAdapter implements NotificationService {
 		}else if(!UserId.isValid(userId)){
 			throw new IllegalArgumentException("Invalid device token");
 		}
+		String pushNotificationMessage = "Push Notification to " + userId + ": " + subject + " - " + message;
 
-		logger.info("Push notification sent to " + userId + " with message: " + message);
+		logger.info(pushNotificationMessage);
 	}
 
 	@Override

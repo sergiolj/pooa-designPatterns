@@ -1,6 +1,6 @@
-package designpatterns.factoryMethod.notificationChannels;
+package designpatterns.factoryMethod.notificationchannels;
 
-import designpatterns.factoryMethod.notificationTypes.NotificationThroughEmail;
+import designpatterns.factoryMethod.notificationtypes.NotificationThroughEmail;
 import designpatterns.factorymethod.NotificationCreator;
 import designpatterns.factorymethod.NotificationProduct;
 

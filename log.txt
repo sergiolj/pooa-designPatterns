@@ -1,6 +1,48 @@
-Date/Time: 2025-06-12T14:14:55.975829445 | Error msg: Hello World         
-Date/Time: 2025-06-12T14:14:55.976266451 | Error msg: Error msg           
-Date/Time: 2025-06-12T14:16:22.733448416 | Error msg: Hello World         
-Date/Time: 2025-06-12T14:16:22.733873523 | Error msg: Error msg           
-Date/Time: 2025-06-12T14:53:10.625994704 | Error msg: Hello World         
-Date/Time: 2025-06-12T14:53:10.626447510 | Error msg: Error msg           
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2026-08-14T19:19:15.714703108Z</date>
+  <millis>1786735155714</millis>
+  <nanos>703108</nanos>
+  <sequence>0</sequence>
+  <logger>designpatterns.util.DesignLogger</logger>
+  <level>INFO</level>
+  <class>designpatterns.util.DesignLogger</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>This is an info message to the console.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2026-08-14T19:20:21.539965323Z</date>
+  <millis>1786735221539</millis>
+  <nanos>965323</nanos>
+  <sequence>0</sequence>
+  <logger>designpatterns.util.DesignLogger</logger>
+  <level>INFO</level>
+  <class>designpatterns.util.DesignLogger</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>This is an info message to the console.</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2026-08-14T19:21:07.031005748Z</date>
+  <millis>1786735267031</millis>
+  <nanos>5748</nanos>
+  <sequence>0</sequence>
+  <logger>designpatterns.util.DesignLogger</logger>
+  <level>INFO</level>
+  <class>designpatterns.util.DesignLogger</class>
+  <method>register</method>
+  <thread>1</thread>
+  <message>This is an info message to the console.</message>
+</record>
+</log>

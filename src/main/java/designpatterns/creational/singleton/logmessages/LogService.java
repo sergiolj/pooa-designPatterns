@@ -1,4 +1,4 @@
-package designpatterns.singleton.logmessages;
+package designpatterns.creational.singleton.logmessages;
 
 import java.io.FileWriter;
 import java.io.IOException;

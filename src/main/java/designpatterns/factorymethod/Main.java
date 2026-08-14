@@ -1,8 +1,8 @@
 package designpatterns.factorymethod;
 
-import designpatterns.factoryMethod.notificationChannels.ChannelEmail;
-import designpatterns.factoryMethod.notificationChannels.ChannelSMS;
-import designpatterns.factoryMethod.notificationChannels.ChannelWhatsapp;
+import designpatterns.factoryMethod.notificationchannels.ChannelEmail;
+import designpatterns.factoryMethod.notificationchannels.ChannelSMS;
+import designpatterns.factoryMethod.notificationchannels.ChannelWhatsapp;
 
 public class Main {
     public static void main(String[] args) {
